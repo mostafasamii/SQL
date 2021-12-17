@@ -1,0 +1,72 @@
+*Query 1*
+SELECT e.FirstName employee_Fname, e.LastName employee_Lname, SUM(i.Total) as total_purchases
+FROM Employee e
+JOIN Customer c
+ON c.SupportRepId = e.EmployeeId
+JOIN Invoice i
+ON i.CustomerId = c.CustomerId
+GROUP BY 1, 2
+ORDER BY 3 DESC
+LIMIT 3;
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+*Query2*
+SELECT t.Name track_name, t.Milliseconds length
+FROM Track t
+JOIN MediaType mt
+ON t.MediaTypeId = mt.MediaTypeId
+WHERE mt.Name = 'MPEG audio file'  AND length > 
+					 (SELECT AVG(t.Milliseconds)
+					    FROM Track t)
+ORDER BY length DESC
+LIMIT 10;
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+*Query 3*
+WITH t1 AS (
+	SELECT DISTINCT c.City city_name, a.Name artist_name, COUNT(*) n_times
+	FROM Customer c
+	JOIN Invoice i
+	ON c.CustomerId = i.CustomerId
+	JOIN InvoiceLine il
+	ON il.InvoiceId = i.InvoiceId
+	JOIN Track t
+	ON t.TrackId = il.TrackId
+	JOIN Album alb
+	ON alb.AlbumId = t.AlbumId
+	JOIN Artist a
+	ON a.ArtistId = alb.ArtistId
+	GROUP BY 1)
+	
+SELECT c.City city_name, t1.artist_name, MAX(t1.n_times) max_n_times
+FROM Customer c
+JOIN t1
+ON c.City = t1.city_name
+GROUP BY 1, 2
+ORDER By 3 DESC
+LIMIT 10;
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+*Query 4*
+SELECT g.Name genre_name,
+		CASE WHEN g.Name = 'Rock' THEN 'Quite gentle, Creative, Introverted, and low self-esteem'
+			 WHEN g.Name = 'Latin' THEN 'sociable, talkative, assertive, active, and sympathetic'
+			 WHEN g.Name = 'Metal' THEN 'Introverted, very intuitive, and low self-esteem'
+			 WHEN g.Name = 'Jazz' THEN 'extroverted with high self-esteem, very creative, and intelligent'
+			 WHEN g.Name = 'Alternative & Punk' THEN 'intellectual curiosity,imagination, aesthetic, and emotional sensitivity'
+		     END 
+			 AS personality_type, COUNT(*) played_times
+FROM Customer c
+JOIN Invoice i
+ON i.CustomerId = c.CustomerId
+JOIN InvoiceLine il
+ON i.InvoiceId = il.InvoiceId
+JOIN Track t
+ON t.TrackId = il.TrackId
+JOIN Genre g
+ON g.GenreId = t.GenreId
+GROUP BY genre_name
+ORDER BY played_times DESC
+LIMIT 5;
+
+
