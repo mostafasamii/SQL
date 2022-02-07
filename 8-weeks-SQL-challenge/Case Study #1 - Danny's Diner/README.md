@@ -1,6 +1,6 @@
 # Case Study #1 - Danny's
 
-![Image of Interface](https://github.com/mostafasamii/SQL/8-weeks-SQL-challenge/Case Study #1 - Danny's Diner/images/1.PNG )
+![Image of Interface](https://github.com/mostafasamii/SQL/blob/main/8-weeks-SQL-challenge/Case%20Study%20%231%20-%20Danny's%20Diner/images/1.png )
 
 #Introduction
 
@@ -25,7 +25,7 @@ Danny has shared with you 3 key datasets for this case study:
 You can inspect the Entity Relationship Diagram (ERD) and example data below
 ## Entity Relationship Diagram
 
-![Image of Interface](https://github.com/mostafasamii/SQL/8-weeks-SQL-challenge/Case Study #1 - Danny's Diner/images/ERD.PNG )
+![Image of Interface](https://github.com/mostafasamii/SQL/blob/main/8-weeks-SQL-challenge/Case%20Study%20%231%20-%20Danny's%20Diner/images/ERD.PNG)
 
 ## Example Datasets
 All datasets exist within the **dannys_diner** database schema - be sure to include this reference within your SQL scripts as you start exploring the data and answering the case study questions.
@@ -34,16 +34,16 @@ All datasets exist within the **dannys_diner** database schema - be sure to incl
 ### Table 1: Sales
 The sales table captures all customer_id level purchases with an corresponding order_date and product_id information for when and what menu items were ordered.
 
-![Image of Interface](https://github.com/mostafasamii/SQL/8-weeks-SQL-challenge/Case Study #1 - Danny's Diner/images/SalesTable.PNG )
+![Image of Interface](https://github.com/mostafasamii/SQL/blob/main/8-weeks-SQL-challenge/Case%20Study%20%231%20-%20Danny's%20Diner/images/SalesTable.PNG)
 
 ### Table 2: Menu
 
 The menu table maps the product_id to the actual product_name and price of each menu item.
-![Image of Interface](https://github.com/mostafasamii/SQL/8-weeks-SQL-challenge/Case Study #1 - Danny's Diner/images/MenuTable.PNG )
+![Image of Interface](https://github.com/mostafasamii/SQL/blob/main/8-weeks-SQL-challenge/Case%20Study%20%231%20-%20Danny's%20Diner/images/MenuTable.PNG)
 
 ### Table 3: Members
 The final members table captures the join_date when a customer_id joined the beta version of the Danny's Diner loyalty program
-![Image of Interface](https://github.com/mostafasamii/SQL/8-weeks-SQL-challenge/Case Study #1 - Danny's Diner/images/MembersTable.PNG )
+![Image of Interface](https://github.com/mostafasamii/SQL/blob/main/8-weeks-SQL-challenge/Case%20Study%20%231%20-%20Danny's%20Diner/images/MembersTable.PNG)
 
 # Case Study Questions
 
@@ -71,8 +71,8 @@ The final members table captures the join_date when a customer_id joined the bet
 # Bonus questions
 
 * Creating basic data tables that Danny and his team can use to quickly derive insights without needing to join the underlying tables using SQL.
-![Image of Interface](https://github.com/mostafasamii/SQL/8-weeks-SQL-challenge/Case Study #1 - Danny's Diner/images/bonusquestion_1.PNG )
+![Image of Interface](https://github.com/mostafasamii/SQL/blob/main/8-weeks-SQL-challenge/Case%20Study%20%231%20-%20Danny's%20Diner/images/bonusquestion_1.PNG)
 
 * Danny also requires further information about the ranking if customers products, but he purposely does not need the ranking for non-member
 purchases so he expect null ranking values for the records when customers are not yet part of the loyalty program.
-![Image of Interface](https://github.com/mostafasamii/SQL/8-weeks-SQL-challenge/Case Study #1 - Danny's Diner/images/bonusquestion_2.PNG )
+![Image of Interface](https://github.com/mostafasamii/SQL/blob/main/8-weeks-SQL-challenge/Case%20Study%20%231%20-%20Danny's%20Diner/images/bonusquestion_2.PNG)
